@@ -36,11 +36,19 @@ Your Grip application
 
 require "grip"
 
-get "/" do
-  "Hello World!"
+class HelloWorldHttpConsumer < Grip::HttpConsumer
+  def get(req)
+    "Hello world"
+  end
 end
 
-Grip.run
+class HelloWorld < Grip::Application
+  scope do
+    get "/", HelloWorldHttpConsumer
+  end
+end
+
+HelloWorld.new.run
 ```
 
 Now you can easily test your `Grip` application in your `spec`s.
