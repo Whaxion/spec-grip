@@ -1,12 +1,13 @@
-name: spec-kemal
+name: spec-grip
 version: 0.5.0
 
 development_dependencies:
-  kemal:
-    github: sdogruyol/kemal
-    version: 0.25.1
+  grip:
+    github: grkek/grip
+    version: 0.27.2
 
 authors:
+  - Whaxion <me@whaxion.be>
   - Sdogruyol <dogruyolserdar@gmail.com>
 
 license: MIT

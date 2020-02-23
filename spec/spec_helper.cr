@@ -1,13 +1,37 @@
 require "spec"
-require "kemal"
-require "../src/spec-kemal"
+require "grip"
+require "../src/spec-grip"
 
 Spec.before_each do
-  config = Kemal.config
+  config = Grip.config
   config.env = "test"
   config.setup
 end
 
 Spec.after_each do
-  Kemal.config.clear
+  Grip.config.clear
+end
+
+class HelloWorldHttpConsumer < Grip::HttpConsumer
+  def get(req)
+    "Hello world"
+  end
+end
+
+class PostHttpConsumer < Grip::HttpConsumer
+  def post(req)
+    req.params.json.to_json
+  end
+end
+
+class HelloWorld < Grip::Application
+  scope do
+    get "/", HelloWorldHttpConsumer
+  end
+end
+
+class Post < Grip::Application
+  scope do
+    post "/user", PostHttpConsumer
+  end
 end

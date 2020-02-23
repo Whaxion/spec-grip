@@ -1,21 +1,22 @@
-# spec-kemal
+# spec-grip
+Grip helpers to Crystal's `spec` for easy testing.
 
-Kemal helpers to Crystal's `spec` for easy testing.
+Forked from spec-grip and adapted to [Grip](grkek/grip)
 
 ## Installation
 
 Add it to your `shard.yml`.
 
 ```yaml
-name: your-kemal-app
+name: your-grip-app
 version: 0.1.0
 
 dependencies:
-  spec-kemal:
-    github: kemalcr/spec-kemal
+  spec-grip:
+    github: Whaxion/spec-grip
     branch: master
-  kemal:
-    github: kemalcr/kemal
+  grip:
+    github: grkek/grip
     branch: master
 ```
 
@@ -24,34 +25,34 @@ dependencies:
 Just require it before your files in your `spec/spec_helper.cr`
 
 ```crystal
-require "spec-kemal"
-require "../src/your-kemal-app"
+require "spec-grip"
+require "../src/your-grip-app"
 ```
 
-Your Kemal application
+Your Grip application
 
 ```crystal
-# src/your-kemal-app.cr
+# src/your-grip-app.cr
 
-require "kemal"
+require "grip"
 
 get "/" do
   "Hello World!"
 end
 
-Kemal.run
+Grip.run
 ```
 
-Now you can easily test your `Kemal` application in your `spec`s.
+Now you can easily test your `Grip` application in your `spec`s.
 
 ```
-KEMAL_ENV=test crystal spec
+GRIP_ENV=test crystal spec
 ```
 
 ```crystal
-# spec/your-kemal-app-spec.cr
+# spec/your-grip-app-spec.cr
 
-describe "Your::Kemal::App" do
+describe "Your::Grip::App" do
 
   # You can use get,post,put,patch,delete to call the corresponding route.
   it "renders /" do
@@ -64,7 +65,7 @@ end
 
 ## Contributing
 
-1. Fork it ( https://github.com/kemalcr/spec-kemal/fork )
+1. Fork it ( https://github.com/Whaxion/spec-grip/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
@@ -72,4 +73,5 @@ end
 
 ## Contributors
 
-- [sdogruyol](https://github.com/sdogruyol) Sdogruyol - creator, maintainer
+- [Whaxion](https://github.com/Whaxion) Whaxion - maintainer of the fork
+- [sdogruyol](https://github.com/sdogruyol) Sdogruyol - creator

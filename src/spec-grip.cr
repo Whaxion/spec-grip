@@ -1,7 +1,7 @@
 require "spec"
-require "kemal"
+require "grip"
 
-Kemal.config.logging = false
+Grip.config.logging = false
 
 class Global
   @@response : HTTP::Client::Response?
@@ -34,9 +34,9 @@ def process_request(request)
 end
 
 def build_main_handler
-  main_handler = Kemal.config.handlers.first
+  main_handler = Grip.config.handlers.first
   current_handler = main_handler
-  Kemal.config.handlers.each_with_index do |handler, index|
+  Grip.config.handlers.each_with_index do |handler, index|
     current_handler.next = handler
     current_handler = handler
   end
