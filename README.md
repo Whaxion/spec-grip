@@ -1,7 +1,7 @@
 # spec-grip
 Grip helpers to Crystal's `spec` for easy testing.
 
-Forked from spec-grip and adapted to [Grip](grkek/grip)
+Forked from spec-grip and adapted to [Grip](https://github.com/grip-framework/grip)
 
 ## Installation
 
@@ -13,10 +13,10 @@ version: 0.1.0
 
 dependencies:
   spec-grip:
-    github: Whaxion/spec-grip
+    github: grip-framework/spec-grip
     branch: master
   grip:
-    github: grkek/grip
+    github: grip-framework/grip
     branch: master
 ```
 
@@ -73,7 +73,7 @@ end
 
 ## Contributing
 
-1. Fork it ( https://github.com/Whaxion/spec-grip/fork )
+1. Fork it ( https://github.com/grip-framework/spec-grip/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
