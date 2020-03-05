@@ -36,7 +36,7 @@ Your Grip application
 
 require "grip"
 
-class HelloWorldHttpConsumer < Grip::HttpConsumer
+class HelloWorldController < Grip::Controllers::Http
   def get(context)
     "Hello world"
   end
@@ -44,7 +44,7 @@ end
 
 class HelloWorld < Grip::Application
   def initialize
-    get "/", HelloWorldHttpConsumer
+    get "/", HelloWorldController
   end
 end
 
