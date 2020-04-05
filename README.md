@@ -36,19 +36,20 @@ Your Grip application
 
 require "grip"
 
-class HelloWorldController < Grip::Controllers::Http
+class Index < Grip::Controller::Http
   def get(context)
-    "Hello world"
+    "Hello, World!"
   end
 end
 
-class HelloWorld < Grip::Application
+class Application < Grip::Application
   def initialize
-    get "/", HelloWorldController
+    get "/", Index
   end
 end
 
-HelloWorld.new.run
+app = Application.new
+app.run
 ```
 
 Now you can easily test your `Grip` application in your `spec`s.
@@ -65,7 +66,7 @@ describe "Your::Grip::App" do
   # You can use get,post,put,patch,delete to call the corresponding route.
   it "renders /" do
     get "/"
-    response.body.should eq "Hello world"
+    response.body.should eq "Hello, World!"
   end
 
 end
@@ -82,4 +83,5 @@ end
 ## Contributors
 
 - [Whaxion](https://github.com/Whaxion) Whaxion - maintainer of the fork
+- [grkek](https://github.com/grkek) Grkek - creator and maintainer of the Grip framework
 - [sdogruyol](https://github.com/sdogruyol) Sdogruyol - creator
