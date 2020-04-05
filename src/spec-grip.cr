@@ -1,8 +1,6 @@
 require "spec"
 require "grip"
 
-Grip.config.logging = false
-
 class Global
   @@response : HTTP::Client::Response?
 
