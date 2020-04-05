@@ -1,13 +1,13 @@
 name: spec-grip
-version: 0.5.2
+version: 0.5.3
 
 development_dependencies:
   grip:
     github: grip-framework/grip
-    version: 0.27.2
 
 authors:
   - Whaxion <me@whaxion.be>
+  - grkek <giorgi.kavrelishvili@pm.me>
   - Sdogruyol <dogruyolserdar@gmail.com>
 
 license: MIT
