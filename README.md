@@ -1,7 +1,7 @@
 # spec-grip
 Grip helpers to Crystal's `spec` for easy testing.
 
-Forked from spec-grip and adapted to [Grip](https://github.com/grip-framework/grip)
+Forked from spec-kemal and adapted to [Grip](https://github.com/grip-framework/grip)
 
 ## Installation
 
@@ -65,7 +65,7 @@ describe "Your::Grip::App" do
   # You can use get,post,put,patch,delete to call the corresponding route.
   it "renders /" do
     get "/"
-    response.body.should eq "Hello World!"
+    response.body.should eq "Hello world"
   end
 
 end
