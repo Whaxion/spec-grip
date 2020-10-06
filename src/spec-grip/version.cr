@@ -1,3 +1,3 @@
 module Spec::Grip
-  VERSION = "0.5.3"
+  VERSION = {{ `shards version #{__DIR__}`.chomp.stringify }}
 end

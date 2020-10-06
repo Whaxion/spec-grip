@@ -1,4 +1,5 @@
 # spec-grip
+
 Grip helpers to Crystal's `spec` for easy testing.
 
 Forked from spec-kemal and adapted to [Grip](https://github.com/grip-framework/grip)
@@ -14,29 +15,28 @@ version: 0.1.0
 dependencies:
   spec-grip:
     github: grip-framework/spec-grip
-    branch: master
+
   grip:
     github: grip-framework/grip
-    branch: master
 ```
 
 ## Usage
 
 Just require it before your files in your `spec/spec_helper.cr`
 
-```crystal
+```ruby
 require "spec-grip"
 require "../src/your-grip-app"
 ```
 
 Your Grip application
 
-```crystal
+```ruby
 # src/your-grip-app.cr
 
 require "grip"
 
-class Index < Grip::Controller::Http
+class ExampleController < Grip::Controller::Http
   def get(context)
     "Hello, World!"
   end
@@ -44,7 +44,7 @@ end
 
 class Application < Grip::Application
   def initialize
-    get "/", Index
+    get "/", ExampleController
   end
 end
 
@@ -55,18 +55,18 @@ app.run
 Now you can easily test your `Grip` application in your `spec`s.
 
 ```
-GRIP_ENV=test crystal spec
+APP_ENV=test crystal spec
 ```
 
-```crystal
+```ruby
 # spec/your-grip-app-spec.cr
 
 describe "Your::Grip::App" do
-
   # You can use get,post,put,patch,delete to call the corresponding route.
   it "renders /" do
-    get "/"
-    response.body.should eq "Hello, World!"
+    get "/" do |response|
+      response.body.should eq "Hello, World!"
+    end
   end
 
 end
