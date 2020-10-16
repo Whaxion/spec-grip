@@ -55,7 +55,7 @@ app.run
 Now you can easily test your `Grip` application in your `spec`s.
 
 ```
-APP_ENV=test crystal spec
+crystal spec -Dtest
 ```
 
 ```ruby
